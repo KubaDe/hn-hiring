@@ -25,7 +25,7 @@ export const thread = {
     try {
       const result = await axios.request({
           method: 'get',
-          url: `http://hn.algolia.com/api/v1/items/${id}`,
+          url: `https://hn.algolia.com/api/v1/items/${id}`,
         },
       );
       const { data } = result;
