@@ -1,21 +1,19 @@
 import axios from 'axios';
-import { SearchThreadDto, GetThreadDto } from './thread.dto';
+import { GetThreadDto, SearchThreadDto } from './thread.dto';
 
 export const thread = {
   search: async (query: string): Promise<SearchThreadDto> => {
     try {
       const result = await axios.request({
-          method: 'get',
-          url: 'https://hn.algolia.com/api/v1/search',
-          params: {
-            query,
-          },
+        method: 'get',
+        url: 'https://hn.algolia.com/api/v1/search',
+        params: {
+          query,
         },
-      );
+      });
       const { data } = result;
       return data;
     } catch (e) {
-      console.error(e);
     }
     return {
       hits: [],
@@ -28,15 +26,14 @@ export const thread = {
     }
     try {
       const result = await axios.request({
-          method: 'get',
-          url: `https://hn.algolia.com/api/v1/items/${id}`,
-        },
-      );
+        method: 'get',
+        url: `https://hn.algolia.com/api/v1/items/${id}`,
+      });
       const { data } = result;
       try {
         sessionStorage.setItem(`thread_${id}`, JSON.stringify(data));
       } catch (e) {
-        console.error('Thread to large to cache', e)
+        // Thread to large to cache
       }
       return data;
     } catch (e) {

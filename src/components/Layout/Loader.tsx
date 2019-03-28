@@ -1,10 +1,10 @@
+import { inject, observer } from 'mobx-react';
 import React from 'react';
 import { Spinner } from 'reactstrap';
-import { inject, observer } from 'mobx-react';
 import { CommonStore } from '../../stores/commonStore';
 
 interface IndexProps {
-  commonStore: CommonStore,
+  commonStore: CommonStore;
 }
 
 const styles: object = {
@@ -23,16 +23,21 @@ const styles: object = {
 @inject('commonStore')
 @observer
 class Loader extends React.Component<IndexProps> {
-  static defaultProps = { commonStore: {} };
+  public static defaultProps = { commonStore: {} };
 
-  render() {
-    const { commonStore: { showGlobalLoader } } = this.props;
-    if (!showGlobalLoader) return <></>;
+  public render() {
+    const {
+      commonStore: { showGlobalLoader },
+    } = this.props;
+    if (!showGlobalLoader) {
+      return <></>;
+    }
     return (
       <div style={styles}>
-        <Spinner style={{ width: '3rem', height: '3rem' }}/>{' '}
-      </div>);
+        <Spinner style={{ width: '3rem', height: '3rem' }} />{' '}
+      </div>
+    );
   }
-};
+}
 
 export default Loader;

@@ -1,12 +1,12 @@
-import { observable, action } from 'mobx';
+import { action, observable } from 'mobx';
 
 export class CommonStore {
-  @observable showGlobalLoader = false;
+  @observable public showGlobalLoader = false;
 
   @action
-  setShowGlobalLoader = (show: boolean) => {
+  public setShowGlobalLoader = (show: boolean) => {
     this.showGlobalLoader = show;
-  }
+  };
 }
 
 export default new CommonStore();

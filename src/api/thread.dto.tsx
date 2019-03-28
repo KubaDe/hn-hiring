@@ -1,18 +1,18 @@
 interface Hit {
-  title: string,
-  objectID: string
+  title: string;
+  objectID: string;
 }
 
 export interface SearchThreadDto {
-  hits: Hit[]
+  hits: Hit[];
 }
 
 interface Children {
-  text: string
-  title: string
+  text: string;
+  title: string;
 }
 
-export interface  GetThreadDto {
-  children: Children[],
-  title: string,
+export interface GetThreadDto {
+  children: Children[];
+  title: string;
 }

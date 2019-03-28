@@ -1,9 +1,8 @@
-import React from 'react';
 import { inject, observer } from 'mobx-react';
-import { toJS } from 'mobx';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Col, ListGroup, ListGroupItem, Row, Spinner } from 'reactstrap';
 import { ThreadsListStore } from '../stores/threadsListStore';
-import { ListGroup, ListGroupItem, Row, Col } from 'reactstrap';
 
 interface IndexProps {
   threadsListStore: ThreadsListStore;
@@ -12,32 +11,28 @@ interface IndexProps {
 @inject('threadsListStore')
 @observer
 class Index extends React.Component<IndexProps> {
-  componentDidMount() {
-    const {
-      threadsListStore,
-    } = this.props;
+  public componentDidMount() {
+    const { threadsListStore } = this.props;
     threadsListStore.initLoadList();
   }
 
-  render(): React.ReactNode {
+  public render(): React.ReactNode {
     const {
-      threadsListStore: {
-        threads,
-      },
+      threadsListStore: { threads, isLoading },
     } = this.props;
     return (
       <Row>
         <Col xs={{ offset: 3, size: 6 }}>
           <ListGroup>
             {threads.map(thread => (
-                <ListGroupItem key={thread.title}>
-                  <Link to={`hiring/${thread.objectID}`}>
-                    {thread.title}
-                  </Link>
-                </ListGroupItem>
-              ),
-            )}
+              <ListGroupItem key={thread.title}>
+                <Link to={`hiring/${thread.objectID}`}>{thread.title}</Link>
+              </ListGroupItem>
+            ))}
           </ListGroup>
+          <Col xs={{ offset: 3, size: 6 }} className="text-center mt-3">
+            {isLoading && <Spinner style={{ width: '3rem', height: '3rem' }} />}
+          </Col>
         </Col>
       </Row>
     );
