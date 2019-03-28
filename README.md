@@ -23,7 +23,10 @@ To run linter:
 * UI is in wireframe style. It can be reimplemented with custom designs.
 * Inline styling should be replaced with styled components / styles from different file. 
 * Fuse Search options might be better adjusted.
-* Tags can be used for further content analysis. 
+* Tags can be used for further content analysis.
+* Filters could be more dynamic - prepared according to posts content
+* Filter for salary can be implemented
+* RWD very basic with some layout bugs
 
 
 | Project based on create react app
