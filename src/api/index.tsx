@@ -1,5 +1,14 @@
 import axios from 'axios';
+import axiosRetry from 'axios-retry';
 import { GetThreadDto, SearchThreadDto } from './thread.dto';
+
+axiosRetry(axios, {
+  retries: 3,
+  retryDelay: (retryCount) => {
+    return retryCount * 1000;
+  }
+});
+
 
 export const thread = {
   search: async (query: string): Promise<SearchThreadDto> => {

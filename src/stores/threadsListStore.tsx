@@ -18,7 +18,7 @@ const MONTHS = [
   'December',
 ];
 
-const YEARS = _.range(2)
+const YEARS = _.range(3)
   .map(i => new Date().getFullYear() - i)
   .sort((a, b) => a - b);
 const createQuery = (option: string) => `Ask HN: Who is hiring? (${option})`;

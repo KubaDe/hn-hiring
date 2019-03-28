@@ -22,7 +22,7 @@ class Index extends React.Component<IndexProps> {
     } = this.props;
     return (
       <Row>
-        <Col xs={{ offset: 3, size: 6 }}>
+        <Col md={{ offset: 3, size: 6 }}>
           <ListGroup>
             {threads.map(thread => (
               <ListGroupItem key={thread.title}>

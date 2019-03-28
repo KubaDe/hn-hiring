@@ -112,7 +112,7 @@ class Hiring extends React.Component<IndexProps> {
     }
     const job = jobs[index];
     return (
-      <Jumbotron key={key}>
+      <Jumbotron key={key} className="overflow-hidden">
         <h4>{job.headLine}</h4>
         <hr />
         <small>
