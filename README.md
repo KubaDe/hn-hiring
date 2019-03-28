@@ -28,6 +28,7 @@ To run linter:
 * Filter for salary could be implemented
 * RWD very basic with some layout bugs
 * Long requests could be cancelled in case of leaving the page before content load
+* Chaotic git workflow and commit messages
 
 
 | Project based on create react app
