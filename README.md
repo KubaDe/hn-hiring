@@ -25,8 +25,9 @@ To run linter:
 * Fuse Search options might be better adjusted.
 * Tags can be used for further content analysis.
 * Filters could be more dynamic - prepared according to posts content
-* Filter for salary can be implemented
+* Filter for salary could be implemented
 * RWD very basic with some layout bugs
+* Long requests could be cancelled in case of leaving the page before content load
 
 
 | Project based on create react app
