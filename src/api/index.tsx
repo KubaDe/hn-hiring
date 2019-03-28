@@ -22,6 +22,10 @@ export const thread = {
     };
   },
   getThread: async (id: string): Promise<GetThreadDto> => {
+    const cachedThread = sessionStorage.getItem(`thread_${id}`);
+    if (cachedThread) {
+      return JSON.parse(cachedThread);
+    }
     try {
       const result = await axios.request({
           method: 'get',
@@ -29,6 +33,11 @@ export const thread = {
         },
       );
       const { data } = result;
+      try {
+        sessionStorage.setItem(`thread_${id}`, JSON.stringify(data));
+      } catch (e) {
+        console.error('Thread to large to cache', e)
+      }
       return data;
     } catch (e) {
       console.error(e);

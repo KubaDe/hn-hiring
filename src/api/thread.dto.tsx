@@ -12,7 +12,7 @@ interface Children {
   title: string
 }
 
-export interface GetThreadDto {
+export interface  GetThreadDto {
   children: Children[],
   title: string,
 }
