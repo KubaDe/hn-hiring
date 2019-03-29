@@ -29,6 +29,7 @@ To run linter:
 * RWD very basic with some layout bugs
 * Long requests could be cancelled in case of leaving the page before content load
 * Chaotic git workflow and commit messages
+* Enter the page and pass thread ID witch is not "Ask HN: Who is hiring?" type
 
 
 | Project based on create react app
