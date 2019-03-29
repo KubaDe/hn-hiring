@@ -20,7 +20,7 @@ const FuseSearchOptions = {
   shouldSort: true,
   threshold: 0.4,
   location: 0,
-  distance: 100,
+  distance: 2000,
   maxPatternLength: 32,
   minMatchCharLength: 1,
   keys: ['text'],
