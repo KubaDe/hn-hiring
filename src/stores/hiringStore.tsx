@@ -10,15 +10,16 @@ interface Filter {
 }
 
 const initFilters = {
-  search: '',
   remote: '',
-  technologies: 'null',
   seniority: 'null',
+  technologies: 'null',
+  search: '',
+
 };
 
 const FuseSearchOptions = {
   shouldSort: true,
-  threshold: 0.4,
+  threshold: 0.3,
   location: 0,
   distance: 2000,
   maxPatternLength: 32,
